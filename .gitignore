@@ -1,0 +1,5 @@
+.env
+.vault_pass
+.terraform
+.terraform.lock.hcl
+secrets.auto.tfvars

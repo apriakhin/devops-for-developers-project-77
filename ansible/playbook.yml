@@ -1,0 +1,9 @@
+- hosts: localhost
+  tags: terraform-secrets
+
+  tasks:
+    - name: Create terraform secrets
+      ansible.builtin.template:
+        src: templates/secrets.auto.tfvars.j2
+        dest: ../terraform/secrets.auto.tfvars
+        mode: "0644"
