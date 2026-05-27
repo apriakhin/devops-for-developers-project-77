@@ -10,5 +10,14 @@ terraform-secrets:
 terraform-init:
 	cd terraform && set -a && source .env && set +a && terraform init
 
+terraform-state:
+	cd terraform && set -a && source .env && set +a && terraform state list
+
+terraform-plan:
+	cd terraform && set -a && source .env && set +a && terraform plan
+
 terraform-apply:
-	cd terraform && terraform apply -auto-approve
+	cd terraform && set -a && source .env && set +a && terraform apply -auto-approve
+
+terraform-destroy:
+	cd terraform && set -a && source .env && set +a && terraform destroy -auto-approve
