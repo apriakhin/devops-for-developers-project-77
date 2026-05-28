@@ -2,3 +2,12 @@ pip_install_packages:
   - name: docker
 
 redmine_port: 3000
+
+datadog_site: datadoghq.eu
+datadog_checks:
+  http_check:
+    init_config:
+    instances:
+      - name: redmine
+        url: https://devops-for-developers-project-76.apriakhin.com
+        timeout: 5

@@ -87,3 +87,9 @@ make ansible-setup
 ```bash
 make ansible-deploy
 ```
+
+### Setup monitoring
+
+```bash
+make ansible-monitoring
+```

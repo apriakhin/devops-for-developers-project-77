@@ -8,6 +8,12 @@
         dest: ../terraform/secrets.auto.tfvars
         mode: "0644"
 
+    - name: Create terraform .env file
+      ansible.builtin.template:
+        src: templates/terraform.env.j2
+        dest: ../terraform/.env
+        mode: "0644"
+
 - hosts: webservers
   roles:
     - role: geerlingguy.pip
@@ -15,6 +21,9 @@
 
     - role: geerlingguy.docker
       tags: setup
+
+    - role: datadog.dd.agent
+      tags: monitoring
 
   pre_tasks:
     - name: Perform full system upgrade

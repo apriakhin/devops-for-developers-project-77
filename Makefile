@@ -33,3 +33,6 @@ ansible-setup:
 
 ansible-deploy:
 	cd ansible && ansible-playbook playbook.yml -i inventory.ini --tags deploy --vault-password-file .vault_pass
+
+ansible-monitoring:
+	cd ansible && ansible-playbook playbook.yml -i inventory.ini --tags monitoring --vault-password-file .vault_pass
