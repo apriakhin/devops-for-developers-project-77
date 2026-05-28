@@ -63,3 +63,27 @@ make terraform-apply
 ```bash
 make terraform-destroy
 ```
+
+### Ping servers
+
+```bash
+make ansible-ping
+```
+
+### Install Ansible roles
+
+```bash
+make ansible-install
+```
+
+### Setup system
+
+```bash
+make ansible-setup
+```
+
+### Deploy app
+
+```bash
+make ansible-deploy
+```

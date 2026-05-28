@@ -3,3 +3,5 @@
 .terraform
 .terraform.lock.hcl
 secrets.auto.tfvars
+inventory.ini
+ansible/group_vars/webservers/db.yml

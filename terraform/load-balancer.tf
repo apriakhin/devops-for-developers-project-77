@@ -13,13 +13,13 @@ resource "digitalocean_loadbalancer" "app" {
     entry_protocol      = "https"
     entry_port          = 443
     target_protocol     = "http"
-    target_port         = 80
+    target_port         = 3000
     certificate_name    = digitalocean_certificate.app.name
   }
 
   healthcheck {
     protocol = "http"
-    port     = 80
+    port     = 3000
     path     = "/"
   }
 }

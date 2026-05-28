@@ -21,3 +21,15 @@ terraform-apply:
 
 terraform-destroy:
 	cd terraform && set -a && source .env && set +a && terraform destroy -auto-approve
+
+ansible-ping:
+	cd ansible && ansible webservers -i inventory.ini -m ping -vvvv --vault-password-file .vault_pass
+
+ansible-install:
+	cd ansible && ansible-galaxy install -r requirements.yml
+
+ansible-setup:
+	cd ansible && ansible-playbook playbook.yml -i inventory.ini --tags setup --vault-password-file .vault_pass
+
+ansible-deploy:
+	cd ansible && ansible-playbook playbook.yml -i inventory.ini --tags deploy --vault-password-file .vault_pass
